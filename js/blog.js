@@ -35,8 +35,8 @@ async function renderblog() {
         thumbnailimg.alt = products.name
         productDiv.appendChild(thumbnailimg);
 
-        //const productPrices = document.createElement("p");
-        //productPrices.textContent = "prices:" + products.prices.price;
+        const productshort_description = document.createElement("p");
+        productshort_description.textContent = products.short_description;
 
         const Button = document.createElement("a");
         Button.textContent = "View More";
@@ -45,7 +45,7 @@ async function renderblog() {
         
         
         productDiv.appendChild(productsName);
-        //productDiv.appendChild(productPrices);
+        productDiv.appendChild(productshort_description);
         productDiv.appendChild(Button);
         first_ten_blog.appendChild(productDiv);
 
