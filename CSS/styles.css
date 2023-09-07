@@ -157,11 +157,17 @@ nav a:hover {
     border: 2px;
 }
 
+/*About page styling*/
+
+.about-container p{
+    line-height: 1.5;
+}
+
 
 
 /*contact page styling*/
 
-.contact-box img {
+.contact-box img, .about-container img {
     width: 300px;
     height: 350px;
     margin-top: 20px;
@@ -384,17 +390,21 @@ footer {
     }
 
 
-    .contact-box{
+    .contact-box, .about-container{
         display: grid;
         grid-template-columns: auto auto;
     }
 
-    .contact-box img {
+    .contact-box img, .about-container img {
         width: 550px;
         height: 450px;
     }
     .contact-box p{
         margin-top: 10px;
         margin-bottom: 40px;
+    }
+
+    .about-container p{
+        margin-top: 20px;
     }
 }
