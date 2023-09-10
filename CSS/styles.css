@@ -13,6 +13,7 @@
     --thingreen: #BBEA97;
     --white: #FFFFFF;
     --darkblue: #057398;
+    --belge: #FCEFEF;
 }
 
 /*General styling*/
@@ -127,6 +128,17 @@ nav a {
 nav a:hover {
     border-bottom: 6px solid var(--white);
 }
+
+/*Home page styling*/
+
+.caption-container{
+    margin-top: 40px;
+}
+.capimg img{
+    width: 500px;
+    height: 300px;
+}
+
 
 /*Blog page styling*/
 
@@ -390,9 +402,23 @@ footer {
     }
 
 
-    .contact-box, .about-container{
+    .contact-box, .about-container, .caption-container{
         display: grid;
         grid-template-columns: auto auto;
+    }
+    .caption-container{
+        display: grid;
+        gap: 20;
+    }
+
+    .capimg img{
+        width: 800px;
+        height: 303px;
+    }
+
+    .captext-container{
+        padding: 10px;
+        background-color: var(--belge);
     }
 
     .contact-box img, .about-container img {
