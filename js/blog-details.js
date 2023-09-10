@@ -5,7 +5,7 @@ const params = new URLSearchParams(querystring);
 const id = params.get('id');
 
 
- const BASE_URL = `https://cors.noroff.dev/fitness-power.pami.no/wp-json/wc/store/products/${id}`
+ const BASE_URL = `https://cors.noroff.dev/fitness-power.pami.no/wp-json/wp/v2/Posts/${id}`
 
 
 async function fetchdata() {
@@ -17,20 +17,20 @@ async function fetchdata() {
 fetchdata();
 
 async function renderHTml() {
-    const products = await fetchdata();
+    const blogdiv = await fetchdata();
     const mainElement = document.querySelector(".blog-details");
     mainElement.innerHTML = `
     <div>
-        <img src ="${products.images[0].src}" alt="${products.name}"/>
+        <img src ="${blogdiv.jetpack_featured_media_url}"/>
     </div>
     <div id="blog-content">    
-        <h2> ${products.name}</h2>
-        <p> ${products.description}</p>
+        <h4>${blogdiv.title.rendered}</h4>
+        <p> ${blogdiv.content.rendered}</p>
            
     </div>
         
     `
-    document.title = 'product_details';
+    document.title = `Fitness Power - ${blogdiv.title.rendered}`;
     //console.log(products);
 
 }

@@ -176,13 +176,13 @@ nav a:hover {
     margin-top: 10px;
     margin-bottom: 40px;
 }
-.contact-form {
+#contact-form {
     display: flex;
     flex-direction: column;
     max-width: 500px;
     gap: 10px;
 }
-.contact-form{
+#contact-form{
     background-color: var(--white);
 	border-radius: 5px;
 	box-shadow: 0 2px 5px var(--black);

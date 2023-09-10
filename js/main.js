@@ -1,7 +1,9 @@
+
 const posts = document.querySelector(".posts")
 const latest_posts = document.querySelector(".latest-posts")
 
-const BASE_URL = 'https://cors.noroff.dev/fitness-power.pami.no/wp-json/wc/store/products?'
+const BASE_URL = 'https://cors.noroff.dev/fitness-power.pami.no/wp-json/wp/v2/Posts?per_page=12&_embed'
+//const BASE_URL = ' https://public-api.wordpress.com/wp/v2/sites/fitness-power.pami.no.wordpress.com/posts'
 async function fetchdata() {
     try {
         console.log (BASE_URL)
@@ -14,41 +16,30 @@ async function fetchdata() {
     }
     
 }
+//fetchdata()
 
 async function renderHTml() {
-    const products = await fetchdata();
+    const Posts = await fetchdata();
     
-    console.log({products})
+    console.log({Posts})
     //console.log({html: latest_posts.innerHTML})
     latest_posts.innerHTML = ``;
+
+    Posts.forEach(function (element) {
+        const allpostsElement = document.createElement("div");
+
+        const mainPosts = `
+        <div class="firstPost">
+            <img class="firstimages" src="${element._embedded["wp:featuredmedia"][0].source_url}" alt="#"/>
+            <h4>${element.title.rendered}</h4>
+        </div>
+        `;
+
+        allpostsElement.innerHTML = mainPosts;
+        latest_posts.appendChild(allpostsElement);
     
-    products.forEach((products) => {
-        const productDiv = document.createElement("div");
-        productDiv.className = "product";
-
-        const productsName = document.createElement("h3");
-        productsName.textContent = products.name;
-
-        const thumbnailimg = document.createElement("img");
-        thumbnailimg.src =products.images[0].src || ""; 
-        thumbnailimg.alt = products.name
-        productDiv.appendChild(thumbnailimg);
-
-        //const productPrices = document.createElement("p");
-        //productPrices.textContent = "prices:" + products.prices.price;
-
-        const Button = document.createElement("a");
-        Button.textContent = "View More";
-        Button.className = "cta-button";
-        Button.href = `Blog-details.html?id=${products.id}`;
-        
-        
-        productDiv.appendChild(productsName);
-        //productDiv.appendChild(productPrices);
-        productDiv.appendChild(Button);
-        latest_posts.appendChild(productDiv);
-
     })
 }
-        
-renderHTml()
+
+renderHTml();
+    
