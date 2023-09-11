@@ -33,7 +33,7 @@ async function renderHTml() {
         <p> ${element.excerpt.rendered}</p>
         </div>
         `;
-
+        
         PostsElement.innerHTML = Postsblogs;
 
         PostsElement.addEventListener("click", function () {
@@ -42,6 +42,8 @@ async function renderHTml() {
 
         first_ten_blogs.appendChild(PostsElement);
     });
+
+    
 }
 
 renderHTml();
