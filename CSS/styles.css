@@ -142,11 +142,106 @@ nav a:hover {
 
 /*Blog page styling*/
 
+.blog-container .first-ten-blogs{
+    grid-template-columns: 1fr;
+}
+
 .blog-container{
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 25px 20px;
+    
+}
+
+
+
+.blog-container .first-ten-blogs{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    list-style: none;
+    
+}
+
+.blog-container .first-ten-blogs .box .featuredimage{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+    height: 250px;
+    border-radius: 5px;
+}
+
+.blog-container .first-ten-blogs .box{
+    background-color: var(--belge);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px var(--arch);    
+}
+
+.blog-container .first-ten-blogs .box .featuredimage img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/*.blog-container .first-ten-blogs .box:hover .featuredimage img{
+    transform: scale(1.1);
+}*/
+
+
+.blog-container .first-ten-blogs .box p{
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 15px 0px;
+}
+.blog-container .first-ten-blogs .box .btn{
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid var(--black);
+    color: var(--black);
+    font-size: 16px;
+    border-radius: 10px;
+    
+}
+.blog-container .first-ten-blogs .box .btn:hover{
+    background-color: var(--darkblue);
+    cursor: pointer;
+    
+}
+
+#loadmorebtn{
+    margin-top: 20px;
+    display: inline-block;
+    padding: 13px 30px;
+    border: 1px solid var(--black);
+    font-size: 16px;
+    font-weight: bold;
+    background-color: var(--grey);
+    cursor: pointer;
+    border-radius: 10px;
+}
+#loadmorebtn:hover{
+    background-color: var(--darkblue);
+}
+
+/*.blog-container .first-ten-blogs .box .featuredimage{
+    height: 200px;
+}
+.blog-container .first-ten-blogs .box p{
+    font-size: 14px;
+}*/
+
+.featuredimage{
+    width: 350px;
+    height: 250px;
+}
+
+/*.blog-container{
     display: flex;
     flex-direction: column;
-}
-.first-ten-blogs{
+}*/
+/*.first-ten-blogs{
     display: flexbox;
     flex-direction: column;
 }
@@ -167,7 +262,7 @@ nav a:hover {
     margin: 20px 0px 20px 0px;
     padding: 10px;
     border: 2px;
-}
+}*/
 
 /*About page styling*/
 
@@ -421,9 +516,9 @@ footer {
         background-color: var(--belge);
     }
 
-    .contact-box img, .about-container img {
-        width: 550px;
-        height: 450px;
+    .contact-box img, .about-container img .featuredimage{
+        width: 450px;
+        height: 350px;
     }
     .contact-box p{
         margin-top: 10px;
@@ -433,4 +528,86 @@ footer {
     .about-container p{
         margin-top: 20px;
     }
+
+    .blog-container{
+        max-width: 1300px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 25px 20px;
+    }
+    .blog-container .first-ten-blogs{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        list-style: none;
+        
+    }
+
+    .blog-container .first-ten-blogs .box .featuredimage{
+        margin-bottom: 20px;
+        overflow: hidden;
+        height: 250px;
+        border-radius: 5px;
+    }
+
+    .blog-container .first-ten-blogs .box{
+        background-color: var(--belge);
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px var(--arch);    
+    }
+
+    .blog-container .first-ten-blogs .box:nth-child(1),
+    .blog-container .first-ten-blogs .box:nth-child(2),
+    .blog-container .first-ten-blogs .box:nth-child(3){
+        display: inline-block;
+    }
+
+
+    .blog-container .first-ten-blogs .box .featuredimage img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .blog-container .first-ten-blogs .box:hover .featuredimage img{
+        transform: scale(1.1);
+    }
+
+
+    .blog-container .first-ten-blogs .box p{
+        font-size: 16px;
+        line-height: 1.5;
+        padding: 15px 0;
+    }
+    .blog-container .first-ten-blogs .box .btn{
+        display: inline-block;
+        padding: 10px 30px;
+        border: 1px solid var(--black);
+        color: var(--black);
+        font-size: 16px;
+        border-radius: 10px;
+        
+    }
+    .blog-container .first-ten-blogs .box .btn:hover{
+        background-color: var(--darkblue);
+        cursor: pointer;
+        
+    }
+
+    #loadmorebtn{
+        margin-top: 20px;
+        display: inline-block;
+        padding: 13px 30px;
+        border: 1px solid var(--black);
+        font-size: 16px;
+        font-weight: bold;
+        background-color: var(--grey);
+        cursor: pointer;
+        border-radius: 10px;
+    }
+    #loadmorebtn:hover{
+        background-color: var(--darkblue);
+    }
+
 }

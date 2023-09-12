@@ -28,15 +28,13 @@ async function renderHTml() {
 
         const Postsblogs = `
         <div class= "first-ten-blogs">
-            <div class="box">
-                <h2>${element.title.rendered}</h2>
-                <img class= "featuredimage" src ="${element._embedded["wp:featuredmedia"][0].source_url}" alt="#"/>
-                <p> ${element.excerpt.rendered}</p>
-                <button class="btn"> Load more </button>
-            </div>
+        <h2>${element.title.rendered}</h2>
+        <img class= "featuredimage" src ="${element._embedded["wp:featuredmedia"][0].source_url}" alt="#"/>
+        <p> ${element.excerpt.rendered}</p>
+        <button> Load more </button>
         </div>
         `;
-        
+
         PostsElement.innerHTML = Postsblogs;
 
         PostsElement.addEventListener("click", function () {
@@ -46,6 +44,19 @@ async function renderHTml() {
         first_ten_blogs.appendChild(PostsElement);
     });
 
-}
 
-renderHTml();
+    var currentindex = 0
+    function loadmore() {
+        var maxresult = 10
+            for(var i = 0; i <maxresult; i++){
+                if(currentindex >= blogpost.length){
+                    $("#loadmorebtn") .hide()
+                    return
+                }
+                $(".blog-container").append("<div>" +blogpost[i+currentindex] +"</div>")
+            }
+            currentindex += maxresult
+    }
+    
+}
+renderHTml()
