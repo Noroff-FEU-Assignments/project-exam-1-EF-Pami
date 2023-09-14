@@ -138,6 +138,39 @@ nav a:hover {
     width: 500px;
     height: 300px;
 }
+.posts{
+    position: relative;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    left: 0;
+    top: 10px;
+    transition: 0.4s ease-in-out;
+}
+
+.firstimages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+    margin: 0 10px;
+    text-align: center;
+}
+/*.btn{
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+.btn:nth-child(2){
+    margin-left: -74px;
+}
+.fa{
+    font-size: 40px;
+}*/
 
 
 /*Blog page styling*/

@@ -5,9 +5,9 @@ const more_blog = document.querySelector(".more-blogs")
 const BASE_URL = 'https://cors.noroff.dev/fitness-power.pami.no/wp-json/wp/v2/Posts?_embed'
 
 
-async function fetchdata() {
+async function fetchdata(page, per_page) {
     try {
-        const response = await fetch(BASE_URL);
+        const response = await fetch(`${BASE_URL}&page=${page}&per_page=${per_page}`);
         const data = await response.json();
         return data;
     } catch(error) {
@@ -18,10 +18,10 @@ async function fetchdata() {
 fetchdata();
 
 async function renderHTml() {
-    const blogpost = await fetchdata();
+    const blogpost = await fetchdata(currentPage, postePerPage);
     console.log({blogpost})
 
-    first_ten_blogs.innerHTML = ``;
+    //first_ten_blogs.innerHTML = ``;
 
     blogpost.forEach(function (element) {
         const PostsElement = document.createElement("li");
@@ -44,19 +44,27 @@ async function renderHTml() {
         first_ten_blogs.appendChild(PostsElement);
     });
 
-
-    var currentindex = 0
-    function loadmore() {
-        var maxresult = 10
-            for(var i = 0; i <maxresult; i++){
-                if(currentindex >= blogpost.length){
-                    $("#loadmorebtn") .hide()
-                    return
-                }
-                $(".blog-container").append("<div>" +blogpost[i+currentindex] +"</div>")
-            }
-            currentindex += maxresult
+    if (blogpost.length < postePerPage) {
+        loadmorebtn.style.display = "none";
     }
+
+    let currentPage = 1;
+    const postePerPage = 10;
+
+    function loadMorePosts() {
+        currentPage++;
+        renderHTml();
+    }
+
+    const loadmorebtn = document.getElementById("loadmorebtn");
+    loadmorebtn.addEventListener("click", loadMorePosts);
+
+    const initialPosts = await fetchdata(currentPage, postePerPage);
+
+
+
+
+    
     
 }
 renderHTml()
