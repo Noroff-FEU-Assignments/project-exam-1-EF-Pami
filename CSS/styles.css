@@ -157,6 +157,11 @@ nav a:hover {
     margin: 0 10px;
     text-align: center;
 }
+
+.next, .previous i{
+    font-size: 25px;
+    cursor: pointer;
+}
 /*.btn{
     font-size: 20px;
     margin-top: 20px;
@@ -296,6 +301,18 @@ nav a:hover {
     padding: 10px;
     border: 2px;
 }*/
+
+
+/*Blog details page styling*/
+
+.blog-details{
+    margin-top: 20px;
+}
+
+.blog-details p{
+    margin-top: 10px;
+
+}
 
 /*About page styling*/
 
@@ -641,6 +658,18 @@ footer {
     }
     #loadmorebtn:hover{
         background-color: var(--darkblue);
+    }
+
+    .blog-details p{
+        line-height: 1.5;
+    
+    }
+
+    .blog-details img{
+        width: 700px;
+        height: 500px;
+        border-radius: 20px;
+        margin-top: 10px;
     }
 
 }

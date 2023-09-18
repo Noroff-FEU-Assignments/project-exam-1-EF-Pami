@@ -21,6 +21,7 @@ async function renderHTml() {
     const mainElement = document.querySelector(".blog-details");
     mainElement.innerHTML = `
     <div>
+        <h1>Blog details</h1>
         <img src ="${blogdiv.jetpack_featured_media_url}"/>
     </div>
     <div id="blog-content">    
