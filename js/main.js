@@ -3,7 +3,7 @@ const posts = document.querySelector(".posts")
 const latest_posts = document.querySelector(".latest-posts")
 
 const BASE_URL = 'https://cors.noroff.dev/fitness-power.pami.no/wp-json/wp/v2/Posts?per_page=12&_embed'
-//const BASE_URL = ' https://public-api.wordpress.com/wp/v2/sites/fitness-power.pami.no.wordpress.com/posts'
+
 async function fetchdata() {
     try {
         console.log (BASE_URL)

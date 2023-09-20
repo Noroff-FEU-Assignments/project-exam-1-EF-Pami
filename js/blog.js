@@ -32,7 +32,7 @@ async function renderHTml() {
                 <h2>${element.title.rendered}</h2>
                 <img class= "featuredimage" src ="${element._embedded["wp:featuredmedia"][0].source_url}" alt="#"/>
                 <p> ${element.excerpt.rendered}</p>
-                <button class="btn"> Load more </button>
+                <button class="btn"> Read more </button>
             </div>
         </div>
         `;

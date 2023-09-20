@@ -7,7 +7,8 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="CSS/styles.css" rel="stylesheet">
-    <script defer src ="js/blog.js"></script>
+    <script src="js/errorMessage.js" type="module"></script>
+    <script defer src ="js/blog-display.js"></script>
     <title>FITNESS POWER: Blogs page</title>
 </head>
 <body>
@@ -31,8 +32,12 @@
             </ul>
         </nav>
     </header>
-    <main>
+    <main id="blogpage">
         <h1>BLOGS</h1>
+        <div class="loader-container">
+            <div class="content-loader"></div>
+            <p>Loading...</p>
+        </div>
         <section class="blog-container">
             <div class="first-ten-blogs">
                 <div class="box">
@@ -48,6 +53,9 @@
 
             </div>
         </section>
+        <div class="top-btn">
+            <a href="#blogpage" title="Back to top"><i class="fa-solid fa-square-up"></i></a>
+        </div>
         
         
     </main>
@@ -71,6 +79,7 @@
                 
             
         </div>
+        <p id="copyright">Copyright &copy; 2023 Pami@fitness power</p>
     </footer>
     
 </body>
