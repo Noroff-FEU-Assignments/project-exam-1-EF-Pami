@@ -29,7 +29,7 @@ async function renderHTml() {
         const allpostsElement = document.createElement("div");
 
         const mainPosts = `
-        <section class ="posts">
+        <section class ="Posts">
             <div class="latest-Post">
                 <img class="firstimages" src="${element._embedded["wp:featuredmedia"][0].source_url}" alt="#"/>
                 <h4>${element.title.rendered}</h4>
@@ -41,32 +41,42 @@ async function renderHTml() {
     const count = 0;
     const inc = 0;
     margin = 0;
-    const slider = document.getElementsByClassName("latest-posts")[0];
-    const postDisplay = 0;
+    const slider = document.getElementsByClassName("latest-Posts")[0];
+    let postDisplay = 0;
 
     if(screen.width > 900) {
-        postDisplay = document.getElementsByClassName("posts")[0].getAttribute("post-display-d");
+        postDisplay = document.getElementsByClassName("Posts")[0].getAttribute("post-display-d");
         margin = postDisplay * 5;
     }
 
     if(screen.width > 700 && screen.width < 900) {
-        postDisplay = document.getElementsByClassName("posts")[0].getAttribute("post-diplay-t");
+        postDisplay = document.getElementsByClassName("Posts")[0].getAttribute("post-diplay-t");
         margin = postDisplay * 6.8;
     }
 
     if(screen.width > 280 && screen.width < 700) {
-        postDisplay = document.getElementsByClassName("posts")[0].getAttribute("post-display-m");
+        postDisplay = document.getElementsByClassName("Posts")[0].getAttribute("post-display-m");
         margin = postDisplay * 20;
     }
 
     const firstimages = document.getElementsByClassName("firstimages");
     const postleft = mainPosts.length % postDisplay;
-    const postslide = math.floor(mainPosts.length / postDisplay) - 1;
-    for(let i = 0; i <mainPosts.length; i++) {
+    const postslide = Math.floor(mainPosts.length / postDisplay) - 1;
+    for(let i = 0; i <firstimages.length; i++) {
         firstimages[i].style.width = (screen.width / postDisplay) - margin + "px";
     }
 
-    function next() {
+    document.getElementById('carousel_button-prev')
+        .addEventListener("click", function() {
+            moveToPreviousslide();
+        });
+
+    document.getElementById('carousel_button-next')
+        .addEventListener("click", function() {
+            moveToNextslide();
+        });    
+
+    function moveToNextslide() {
         if(inc !== postslide + postleft) {
             if(inc == postslide) {
                 inc = inc + postleft;
@@ -80,7 +90,7 @@ async function renderHTml() {
         slider.style.left = count + "px";
     }
 
-    function previous() {
+    function moveToPreviousslide() {
         if(inc !==0) {
             if(inc ==postleft) {
                 inc = inc - postleft;
@@ -98,7 +108,7 @@ async function renderHTml() {
 
 
 
-        allpostsElement.innerHTML = mainPosts;
+        allpostsElement.innerHTML = firstimages;
         latest_posts.appendChild(allpostsElement);
     
     })
