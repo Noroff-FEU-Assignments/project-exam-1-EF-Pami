@@ -38,10 +38,10 @@ async function renderHTml() {
         
         `;
 
-    const count = 0;
-    const inc = 0;
+    let count = 0;
+    let inc = 0;
     margin = 0;
-    const slider = document.getElementsByClassName("latest-Posts")[0];
+    let slider = document.getElementsByClassName("latest-Posts")[0];
     let postDisplay = 0;
 
     if(screen.width > 900) {
@@ -60,18 +60,18 @@ async function renderHTml() {
     }
 
     const firstimages = document.getElementsByClassName("firstimages");
-    const postleft = mainPosts.length % postDisplay;
-    const postslide = Math.floor(mainPosts.length / postDisplay) - 1;
+    let postleft = mainPosts.length % postDisplay;
+    let postslide = Math.floor(mainPosts.length / postDisplay) - 1;
     for(let i = 0; i <firstimages.length; i++) {
         firstimages[i].style.width = (screen.width / postDisplay) - margin + "px";
     }
 
-    document.getElementById('carousel_button-prev')
+    document.getElementById('carousel_button_prev')
         .addEventListener("click", function() {
             moveToPreviousslide();
         });
 
-    document.getElementById('carousel_button-next')
+    document.getElementById('carousel_button_next')
         .addEventListener("click", function() {
             moveToNextslide();
         });    
@@ -87,7 +87,7 @@ async function renderHTml() {
                 count = count - screen.width;
             }
         }
-        slider.style.left = count + "px";
+        carousel_button_next.style.left = count + "px";
     }
 
     function moveToPreviousslide() {
@@ -102,13 +102,13 @@ async function renderHTml() {
             }
         }
         console.log(inc)
-        slider.style.left = count + "px";
+        carousel_button_prev.style.left = count + "px";
     }
     
 
 
 
-        allpostsElement.innerHTML = firstimages;
+        allpostsElement.innerHTML = mainPosts;
         latest_posts.appendChild(allpostsElement);
     
     })
