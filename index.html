@@ -6,8 +6,10 @@
     <meta name="description" content="Home page of COMMUNITY SCIENCE MUSEUM">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="CSS/index.css" rel="stylesheet">
     <link href="CSS/styles.css" rel="stylesheet">
-    <script defer src ="js/main.js"></script>
+    <script defer src ="js/index.js"></script>
+    <script defer src="js/loader.js"></script>
     <title>FITNESS POWER: Home page</title>
 </head>
 <body>
@@ -32,6 +34,7 @@
         </nav>
     </header>
     <main>
+        <div class="loader"></div>
         <section class="caption-container">
             <div class="captext-container">
                 <p>
@@ -46,13 +49,21 @@
             </div>
         </section>
         <h1>Latest Posts</h1>
+        <div class="mainimages"></div>
         <section class="Posts" post-display-d="4" post-diplay-t="3" post-display-m="1">
             <div class="latest-posts"></div>
         </section>
-        <div class="carousel-actions">
-            <button id="carousel_button_prev" aria-label="previous slide"><</button>
-            <button id="carousel_button_next" aria-label="net slide">></button> 
-        </div>
+        <SECTION class="carousel-container">
+            <div class="carousel-title-wrap">
+                <div class="carousel"></div>
+                <div class="carousel-actions">
+                    <button id="carousel_button_prev" aria-label="previous slide"><</button>
+                    <button id="carousel_button_next" aria-label="net slide">></button> 
+                </div>
+            </div>
+           
+        </SECTION>
+        
           
     </main>
     <footer>

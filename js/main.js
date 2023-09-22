@@ -38,11 +38,11 @@ async function renderHTml() {
         
         `;
 
-    let count = 0;
-    let inc = 0;
+    var count = 0;
+    var inc = 0;
     margin = 0;
-    let slider = document.getElementsByClassName("latest-Posts")[0];
-    let postDisplay = 0;
+    var slider = document.getElementsByClassName("firstimages")[0];
+    var postDisplay = 0;
 
     if(screen.width > 900) {
         postDisplay = document.getElementsByClassName("Posts")[0].getAttribute("post-display-d");
@@ -59,9 +59,9 @@ async function renderHTml() {
         margin = postDisplay * 20;
     }
 
-    const firstimages = document.getElementsByClassName("firstimages");
-    let postleft = mainPosts.length % postDisplay;
-    let postslide = Math.floor(mainPosts.length / postDisplay) - 1;
+    var firstimages = document.getElementsByClassName("firstimages");
+    var postleft = mainPosts.length % postDisplay;
+    var postslide = Math.floor(firstimages.length / postDisplay) - 1;
     for(let i = 0; i <firstimages.length; i++) {
         firstimages[i].style.width = (screen.width / postDisplay) - margin + "px";
     }
@@ -87,7 +87,7 @@ async function renderHTml() {
                 count = count - screen.width;
             }
         }
-        carousel_button_next.style.left = count + "px";
+        firstimages.style.left = count + "px";
     }
 
     function moveToPreviousslide() {
@@ -102,7 +102,7 @@ async function renderHTml() {
             }
         }
         console.log(inc)
-        carousel_button_prev.style.left = count + "px";
+        firstimages.style.left = count + "px";
     }
     
 
