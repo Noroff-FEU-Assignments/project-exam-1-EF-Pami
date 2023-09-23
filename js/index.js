@@ -1,4 +1,4 @@
-// Image slider
+// Carousel for the images 
 const images = document.querySelectorAll(".Posts");
 images.forEach(function (image) {
   image.onclick = function (event) {
@@ -10,16 +10,16 @@ images.forEach(function (image) {
   };
 });
 
-// Carousel
+
 // API fetch
 const BASE_URL = 'https://cors.noroff.dev/fitness-power.pami.no/wp-json/wp/v2/Posts?per_page=12&_embed';
 
-let currentPage = 1; // Track the current page of posts
+let currentPage = 1; // The current page of posts
 const postsPerPage = 4; // Number of posts to display per page
-let totalPosts = 0; // Total number of available posts
+let totalPosts = 0; //  Getting the total number of blog posts
 
 
-// Function to fetch the total number of posts
+// fetching the total number of posts
 async function fetchAllPosts() {
     try {
       const response = await fetch(`${BASE_URL}`);
@@ -30,7 +30,7 @@ async function fetchAllPosts() {
     }
   }
 
-// Function to render the latest posts in the carousel
+// rendering latest posts in the carousel
 async function renderLatestPosts(page) {
     const carousel_container = document.querySelector(".carousel");
   
@@ -52,7 +52,7 @@ async function renderLatestPosts(page) {
         // Create post content
         const postContent = `
           <a href="Blog-details.html?id=${post.id}">
-            <img src="${post._embedded["wp:featuredmedia"][0].source_url}" alt="${post.title.rendered}">
+            <img class="postimages" src="${post._embedded["wp:featuredmedia"][0].source_url}" alt="${post.title.rendered}">
             <h3>${post.title.rendered}</h3>
           </a>
         `;
@@ -61,7 +61,7 @@ async function renderLatestPosts(page) {
         carousel_container.appendChild(carouselItem);
       });
     } catch (error) {
-      console.error("Error fetching and rendering latest posts", error);
+      console.error("Error loading latest posts", error);
     }
   }
 
