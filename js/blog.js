@@ -1,51 +1,80 @@
-const blog_container = document.querySelector(".blog-container")
-const first_ten_blogs = document.querySelector(".first-ten-blogs")
-const more_blog = document.querySelector(".more-blogs")
+document.addEventListener("DOMContentLoaded", async function () {
+    let firstBlogs = document.querySelector(".first-ten-blogs");
+    const more_blog = document.querySelector(".more-blogs")
+    //let viewMore = document.querySelector(".more-blogs");
 
-const BASE_URL = 'https://cors.noroff.dev/fitness-power.pami.no/wp-json/wp/v2/Posts?_embed'
+    //fetching posts API
+    const BASE_URL = 'https://cors.noroff.dev/fitness-power.pami.no/wp-json/wp/v2/Posts?_embed'
 
 
-async function fetchdata() {
+  
+  async function fetchData(page, perPage) {
     try {
-        const response = await fetch(BASE_URL);
-        const data = await response.json();
-        return data;
-    } catch(error) {
-        console.log("error")
-        throw error;
+      const response = await fetch(
+        `${BASE_URL}&page=${page}&per_page=${perPage}`
+      );
+
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error loading blogs", error);
+      throw error;
     }
-}
-fetchdata();
+  }
 
-async function renderHTml() {
-    const blogpost = await fetchdata();
-    console.log({blogpost})
+  // Render the posts from API call
+  async function renderHTML() {
+    try {
+      const blogpost = await fetchData(currentPage, postsPerPage);
 
-    first_ten_blogs.innerHTML = ``;
-
-    blogpost.forEach(function (element) {
-        const PostsElement = document.createElement("li");
-
+      // Append the new blogs to the existing content
+      blogpost.forEach(function (element) {
+        const postsElement = document.createElement("li");
         const Postsblogs = `
-        <div class= "first-ten-blogs">
+          <div class="first-ten-blogs">
             <div class="box">
-                <h2>${element.title.rendered}</h2>
-                <img class= "featuredimage" src ="${element._embedded["wp:featuredmedia"][0].source_url}" alt="#"/>
+                <h3>${element.title.rendered}</h3>
+                <img class="featuredimage" src="${element._embedded["wp:featuredmedia"][0].source_url}" alt="#" />
                 <p> ${element.excerpt.rendered}</p>
                 <button class="btn"> Read more </button>
             </div>
-        </div>
+          </div>
         `;
-        
-        PostsElement.innerHTML = Postsblogs;
-
-        PostsElement.addEventListener("click", function () {
-            window.location.href = `Blog-details.html?id=${element.id}`;
+        postsElement.innerHTML = Postsblogs;
+        postsElement.addEventListener("click", function () {
+          window.location.href = `Blog-details.html?id=${element.id}`;
         });
 
-        first_ten_blogs.appendChild(PostsElement);
-    });
+        firstBlogs.appendChild(postsElement); // Append to the existing content
+      });
 
-}
+      if (blogpost.length < postsPerPage) {
+        loadMoreButton.style.display = "none";
+      } 
+      
+     // Removes the loading element after rendering
+     const loading = document.getElementById("loading");
+     loading.remove();
+   } catch (error) {
+     console.error("Error rendering HTML", error);
+   }
+ }
 
-renderHTml();
+ // "Load more"-button code
+ let currentPage = 1;
+ const postsPerPage = 10;
+
+ // Function to load more posts
+ function loadMorePosts() {
+   currentPage++;
+   renderHTML();
+ }
+
+ // Click event listener to "Load More" button
+ const loadMoreButton = document.getElementById("loadmorebtn");
+ loadMoreButton.addEventListener("click", loadMorePosts);
+
+ // Fetching and rendering the initial posts
+ const initialPosts = await fetchData(currentPage, postsPerPage);
+ renderHTML();
+});

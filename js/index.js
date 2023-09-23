@@ -20,7 +20,7 @@ let totalPosts = 0; // Total number of available posts
 
 
 // Function to fetch the total number of posts
-async function fetchTotalPosts() {
+async function fetchAllPosts() {
     try {
       const response = await fetch(`${BASE_URL}`);
       const data = await response.json();
@@ -66,7 +66,7 @@ async function renderLatestPosts(page) {
   }
 
   // Initialize the carousel by fetching total posts and rendering the first page
- fetchTotalPosts().then(() => {
+ fetchAllPosts().then(() => {
     renderLatestPosts(currentPage);
   });
   
