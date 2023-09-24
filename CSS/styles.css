@@ -162,7 +162,9 @@ nav a:hover {
     width: 425px;
     height: 450px;
 }
-
+.capimg img{
+    max-width: 100%;
+}
 
 
 h3 {
