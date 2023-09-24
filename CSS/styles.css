@@ -300,7 +300,7 @@ h3 {
 
 .blog-container .first-ten-blogs{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(325px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
     gap: 30px;
     list-style: none;
     
