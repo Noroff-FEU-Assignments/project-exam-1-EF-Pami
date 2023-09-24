@@ -20,15 +20,17 @@ async function renderHTml() {
     const blogdiv = await fetchdata();
     const mainElement = document.querySelector(".blog-details");
     mainElement.innerHTML = `
-    <div>
-        <h1>Blog details</h1>
-        <img src ="${blogdiv.jetpack_featured_media_url}"/>
-    </div>
-    <div id="blog-content">    
-        <h4>${blogdiv.title.rendered}</h4>
-        <p> ${blogdiv.content.rendered}</p>
-           
-    </div>
+    
+        <div>
+            <h1>Blog details</h1>
+            <img src ="${blogdiv.jetpack_featured_media_url}"/>
+        </div>
+        <div id="blog-content">    
+            <h4>${blogdiv.title.rendered}</h4>
+            <p> ${blogdiv.content.rendered}</p>
+            
+        </div>
+    
         
     `
     document.title = `Fitness Power - ${blogdiv.title.rendered}`;
