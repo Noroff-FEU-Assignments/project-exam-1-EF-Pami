@@ -290,6 +290,18 @@ h3 {
     height: 250px;
 }
 
+.top-btn {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20PX;
+}
+
+.top-btn a {
+    text-decoration: none;
+    color: var(--black);
+}
+
+
 /*Blog details page styling*/
 
 .blog-details{
