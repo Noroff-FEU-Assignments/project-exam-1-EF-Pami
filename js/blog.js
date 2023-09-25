@@ -57,12 +57,13 @@ document.addEventListener("DOMContentLoaded", async function () {
      loading.remove();
    } catch (error) {
      console.error("Error rendering HTML", error);
+     throw error
    }
  }
 
  // "Load more"-button code
  let currentPage = 1;
- const postsPerPage = 10;
+ const postsPerPage = 9;
 
  // Function to load more posts
  function loadMorePosts() {

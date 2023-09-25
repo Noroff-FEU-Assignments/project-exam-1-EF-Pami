@@ -131,7 +131,6 @@ nav li a {
 }
 
 nav .active {
-    background-color: var(--purple);
     color: var(--white);
 }
 
@@ -606,9 +605,8 @@ footer {
 
     
 
-    li a.active {
-        background-color: var(--purple);
-        color: var(--white);
+    .active {
+        color: var(--blue);
     }
 
     .main-nav {

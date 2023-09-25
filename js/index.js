@@ -44,7 +44,7 @@ async function renderLatestPosts(page) {
       // Clear existing carousel items
       carousel_container.innerHTML = "";
   
-      // Loop through the fetched posts and create carousel items
+      // creating carousel items from the posts
       data.forEach(function (post) {
         const carouselItem = document.createElement("div");
         carouselItem.classList.add("carousel-item");
@@ -65,12 +65,12 @@ async function renderLatestPosts(page) {
     }
   }
 
-  // Initialize the carousel by fetching total posts and rendering the first page
+  // displaying the carousel with the arrow buttons and current page
  fetchAllPosts().then(() => {
     renderLatestPosts(currentPage);
   });
   
-  // Buttons
+  
   // Event listeners for next and previous buttons
   const prevButton = document.getElementById("carousel_button_prev");
   const nextButton = document.getElementById("carousel_button_next");
