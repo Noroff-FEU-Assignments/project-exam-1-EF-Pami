@@ -130,7 +130,7 @@ nav li a {
     color: var(--black);
 }
 
-nav .active {
+nav li a.active {
     color: var(--white);
 }
 
@@ -605,7 +605,7 @@ footer {
 
     
 
-    .active {
+    nav li a.active {
         color: var(--blue);
     }
 
