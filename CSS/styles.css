@@ -130,14 +130,16 @@ nav li {
 nav li a {
     color: var(--black);
 }
-.active {
+
+nav a {
+    
+    text-decoration: none;
+}
+
+a.active {
     color: var(--white);
 }
 
-nav a {
-    color: var(--black);
-    text-decoration: none;
-}
 
 nav a:hover {
     border-bottom: 6px solid var(--red);
@@ -607,7 +609,7 @@ footer {
 
     
 
-    a.active {
+    .active {
         color: red;
     }
 
