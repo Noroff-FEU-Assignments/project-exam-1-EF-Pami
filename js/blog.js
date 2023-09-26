@@ -53,10 +53,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       } 
       
      // Removes the loading element after rendering
-     const loading = document.getElementById("loading");
-     loading.remove();
+     //const loading = document.getElementById("loading");
+     //loading.remove();
    } catch (error) {
-     console.error("Error rendering HTML", error);
+     console.error("Error", error);
      throw error
    }
  }

@@ -37,6 +37,7 @@ header {
     width: 100%;
     border: 1px solid var(--darkgry);
     background-color: var(--darkgry);
+    z-index: 10;
 }
 
 
@@ -129,8 +130,7 @@ nav li {
 nav li a {
     color: var(--black);
 }
-
-nav li a.active {
+.active {
     color: var(--white);
 }
 
@@ -590,6 +590,7 @@ footer {
     header {
         display: flex;
         background-color: var(--darkgry);
+        z-index: 10;
     }
 
 
@@ -597,6 +598,7 @@ footer {
         position: relative;
         width: 85%;
         top: 0;
+        z-index: 10;
     }
 
     nav li a {
@@ -605,8 +607,8 @@ footer {
 
     
 
-    nav li a.active {
-        color: var(--blue);
+    a.active {
+        color: red;
     }
 
     .main-nav {
@@ -653,6 +655,9 @@ footer {
     .contact-box p{
         margin-top: 10px;
         margin-bottom: 40px;
+    }
+    #contact-form {
+        overflow: hidden;
     }
     
     .about-container img {
@@ -755,6 +760,8 @@ footer {
 
     .blog-details {
         margin-top: 180px;
+        
+       
     }
 
     .blog-details p{
