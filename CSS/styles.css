@@ -87,7 +87,7 @@ h3 {
     width: 242px;
     height: 58px;
     padding-left: 0px;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -111,8 +111,10 @@ h3 {
 
 #hamburger-input:checked+.main-nav {
     display: block;
-    text-align: left;
-    
+    text-align: center;  
+}
+.fa-bars{
+    font-size: 40px;
 }
 
 .main-nav {
@@ -125,10 +127,12 @@ nav li {
     font-size: 30px;
     list-style-type: none;
     font-weight: bold;
+    gap: 40px;
 }
 
 nav li a {
     color: var(--black);
+    
 }
 
 nav a {
@@ -309,6 +313,13 @@ h3 {
     margin-top: 180px;
 }
 
+/*.blog-details{
+    position: absolute;
+    /*top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}*/
+
 .blog-details img {
     width: 350px;
     height: 250px;
@@ -353,12 +364,12 @@ h3 {
 	width: 500px;
 	max-width: 100%;
     padding: 30px 40px;
+    margin-bottom: 40px;
 }
-.form-box, .blog-details{
-    margin-bottom: 10px;
+.form-box {
 	padding-bottom: 20px;
-	position: relative;
 }
+
 
 .form-box label{
     display: inline-block;
@@ -573,11 +584,11 @@ footer {
 
 @media(min-width:900px) {
     #logo {
-        width: 242px;
+        width: 300px;
         height: 58px;
-        left: 53px;
+        left: 70px;
         top: 70px;
-        font-size: 24px;
+        font-size: 30px;
         font-weight: bold;
     }
 
@@ -586,7 +597,7 @@ footer {
     }
 
     #logo {
-        width: 15%;
+        width: 30%;
     }
 
     header {
@@ -598,7 +609,7 @@ footer {
 
     #sidebar-menu {
         position: relative;
-        width: 85%;
+        width: 70%;
         top: 0;
         z-index: 10;
     }
@@ -609,15 +620,15 @@ footer {
 
     
 
-    .active {
+    a.active {
         color: red;
     }
 
     .main-nav {
         display: flex;
         height: 100%;
-        justify-content: flex-end;
-        gap: 2em;
+        justify-content: center;
+        gap: 4em;
         align-items: center;
         width: 100%;
         background-color: transparent;
@@ -761,14 +772,11 @@ footer {
     }
 
     .blog-details {
-        margin-top: 180px;
-        
-       
+        margin-top: 180px;  
     }
 
     .blog-details p{
         line-height: 1.5;
-    
     }
 
     .blog-details img{
