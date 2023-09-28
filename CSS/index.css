@@ -172,9 +172,9 @@ margin: 0px auto 50px;
     }*/
   }
 
-  @media only screen and (min-width: 1250px) {
+  @media (min-width: 1250px) {
     .postimages {
         width: 350px;
-        height: 250px;
+        height: 450px;
     }
   }

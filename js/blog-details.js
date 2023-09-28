@@ -23,7 +23,7 @@ async function renderHTml() {
     
         <div>
             <h1>Blog details</h1>
-            <img src ="${blogdiv.jetpack_featured_media_url}"/>
+            <img id="specificimg" src ="${blogdiv.jetpack_featured_media_url}"/>
         </div>
         <div id="blog-content">    
             <h4>${blogdiv.title.rendered}</h4>
@@ -39,3 +39,24 @@ async function renderHTml() {
 }
 
 renderHTml()
+
+// Modal that expands image when clicked
+const modal = document.getElementById("mymodal");
+const modalimage = document.getElementById("modal-image");
+const closemodal = document.getElementById("close-modal");
+
+console.log(modal);
+//document.body.appendChild(overlay);
+
+document.getElementById("specificimg").addEventListener("click", function () {
+  modal.style.display = "block";
+  modalimage.src = this.src;
+});
+
+closemodal.addEventListener("click", function () {
+  modal.style.display = "none";
+  
+});
+
+
+
