@@ -6,7 +6,7 @@
     --purple: #BB77EB;
     --pink: #F582FF;
     --blue: #1B31FF;
-    --red: #FB0E0E;
+    --red: #fa0000;
     --black: #000000;
     --arch: #D9D9D9;
     --grey: #F8F8F8;
@@ -15,7 +15,7 @@
     --darkblue: #057398;
     --belge: #FCEFEF;
     --white: #fff;
-    --darkgry: #474646;
+    --darkgry: #494747;
 }
 
 /*General styling*/
@@ -663,7 +663,7 @@ footer {
     
 
     a.active {
-        color: red;
+        color: var(--lightgreen);
     }
 
     .main-nav {
