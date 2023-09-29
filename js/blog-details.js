@@ -40,13 +40,13 @@ async function renderHTml() {
 
 renderHTml()
 
-// Modal that expands image when clicked
+// triggering the modal
 const modal = document.getElementById("mymodal");
 const modalimage = document.getElementById("modal-image");
 const closemodal = document.getElementById("close-modal");
 
 console.log(modal);
-//document.body.appendChild(overlay);
+
 
 document.getElementById("specificimg").addEventListener("click", function () {
   modal.style.display = "block";
