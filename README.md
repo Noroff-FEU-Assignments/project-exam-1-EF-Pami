@@ -1,3 +1,5 @@
+<img width="447" alt="Screenshot 2023-09-30 195442" src="https://github.com/Noroff-FEU-Assignments/project-exam-1-EF-Pami/assets/119734583/3e237a68-fa1c-4572-841c-1a4035228ddc">
+<img width="659" alt="Screenshot 2023-09-30 195338" src="https://github.com/Noroff-FEU-Assignments/project-exam-1-EF-Pami/assets/119734583/10079015-c07c-4d52-8f00-e372365fbdf7">
 ## Project Exam 1
 
 ## Goal
