@@ -41,22 +41,28 @@ async function renderHTml() {
 renderHTml()
 
 // triggering the modal
-const modal = document.getElementById("mymodal");
+const modal = document.getElementById("imageModal");
 const modalimage = document.getElementById("modal-image");
-const closemodal = document.getElementById("close-modal");
-
+const closemodal = document.getElementById("close");
+const overlay = document.createElement("div");
+overlay.className = "modal-overlay";
 console.log(modal);
 
+document.body.appendChild(overlay);
 
 document.getElementById("specificimg").addEventListener("click", function () {
   modal.style.display = "block";
+  overlay.style.display = "block";
   modalimage.src = this.src;
 });
 
 closemodal.addEventListener("click", function () {
   modal.style.display = "none";
-  
+  overlay.style.display = "none";
 });
 
-
+overlay.addEventListener("click", function () {
+    modal.style.display = "none";
+    overlay.style.display = "none";
+  });
 
