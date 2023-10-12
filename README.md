@@ -1,13 +1,13 @@
 <img width="447" alt="Screenshot 2023-09-30 195442" src="https://github.com/Noroff-FEU-Assignments/project-exam-1-EF-Pami/assets/119734583/3e237a68-fa1c-4572-841c-1a4035228ddc">
 <img width="659" alt="Screenshot 2023-09-30 195338" src="https://github.com/Noroff-FEU-Assignments/project-exam-1-EF-Pami/assets/119734583/10079015-c07c-4d52-8f00-e372365fbdf7">
+
 ## Project Exam 1
 
-## Goal
+## Description
+This project was carried out ot serve as my first project exam as a front-end student after first year of studies. In this project, I am building a blog website with theme "FITNESS POWER".
+Just as it sound it's a blog site which means the purpose of the site simply serves as a reading article for users by providing them with some information with respect to the topic the site is covering.
+This project is made up of specifically of five different sections with different contents ranging from the home page to the contact page.
 
-To put into practice the skills learned over your first year of studies.
-
-## Brief
-You have been tasked with creating a blog site. You can choose the design and topics covered on the blog, but it should have at least the following pages:
 -	Home page
 -	About page
 -	List of blog posts
@@ -15,55 +15,38 @@ You have been tasked with creating a blog site. You can choose the design and to
 -	Contact page.
 
 ### Home Page
-The home page should have a ‘Latest Posts’ section which uses a carousel (slider) for users to click to view more posts. For example, by default the user can see four posts, then they can click an arrow on the right to view the next four posts, and click it again to view the next four posts. The user can also click back to view results they had previously seen. This must be implemented for desktop at least, but if you want a simpler layout for mobile, you can change it from being in a carousel.
+The home page shows a ‘Latest Posts’ section which uses a carousel (slider) for users to click to view more posts. This carousel is structured into 3 slides with each containing four different blogs title, clicking on any of these blogs takes the user straight to the blog specific page for the blog the user is interested in.
 
 ### Blog Page
 
-The blog posts page should show the first 10 blogs, and the user should click to view more results which then show underneath the first 10 blogs.
+The blog posts page show all the blogs posts available for users; this page is structured in such a form in which we see the first 10 blogs, and the user should click the More Blogs button to view more blog posts which then show underneath the first 10 blogs.
 
 ### Blog Specific Page
 
-The content of the blog specific page should be dynamically built using a query string parameter based on whatever link the user clicked. The title of the blog specific page should change based on the blog that has been clicked on e.g. “My Blog | An Article I Wrote”.
-
-If images on the blog post page are clicked, a modal should appear giving the user a bigger view of that image. Clicking outside the image should hide the modal.
+The blog specific page can be reached at when a user chooses a specific blog post to read which then takes the user to the specific blog they are interested in reading. This page contains more information about specific blogs, with a title, image and more description about the specific topic.
 
 ### Contact page
+The contact page gives access to a form through which users can get in touch with the site administration; this contact form is build with validation basis making it a bit restrictive and users must enter certain required details before their entry can be validated. The boxes to be filled in this form are as follows with the conditions for validation:
 
-Create a contact us page, there should be 4 textboxes on this page.
 -	Name (Should be more than 5 characters long)
 -	Email address (Must be a valid email address)
 -	Subject (Should be more than 15 characters long)
 -	Message content (Should be more than 25 characters long)
 
-Please use JavaScript for validation, show error messages if the values in the textboxes do not meet the requirements.
+### About page
+The about page gives just a simple detailed information about the blog site.
 
-### WordPress
+## Built with
 
-The content for your website will be stored on a WordPress installation used as a Headless CMS. It’s important to note that we are only using WordPress to provide an API and add content for the blog. You should not submit a link to a WordPress site, but build your website using HTML, CSS and JavaScript and making a call to the WordPress REST API to fetch the data. 
+- WordPress (wordpress was use mainly for providing the content and API we used for the site)
+- HTML
+- CSS
+- JavaScript 
 
-The project has two aspects:
--	API from your WordPress installation
--	Your website built with HTML, CSS and JavaScript
+## Contact
 
-You will need to add at least 12 blogs for your website. You can use lorem ipsum for paragraphs if you need, but headings, images etc. should all make sense.
+[My LinkedIn account](https://www.linkedin.com/in/ef-ll-pami-pami-04576624b)
 
-Note that this is an exam, and therefore tutor support will be limited as per the study plan.
+[My Twitter account](https://x.com/ItsjoelLeo?t=SxQr4ygxIR8jrr8o7D68yQ&s=03)
 
-## Level 1 Process
-
-1.	Decide on the theme for the blog you’re going to make
-2.	Create a prototype of the website
-3.	Install WordPress on your web host and add the blogs on the admin panel. 
-4.	Use the GitHub repo created by GitHub Classroom for your files and deploy to Netlify
-5.	Build your website using HTML, CSS and JavaScript making a call to the WordPress REST API to fetch your data.
-6.	Install Hotjar on your website.
-7.	Ask users to test your website, and adjust based on their feedback and any insights from Hotjar.
-8.	Write a report documenting your project (template provided in this repository).
-9.	Submit your report as a PDF and a link to both your Netlify deployment and your GitHub repo.
- 
-## Level 2 Process (optional)
-
-1.	You can try adding a sort, filter, or search to the blog posts page allowing users to find the blog post more easily that they’re looking for. 
-2.	Post the data from the contact form to WordPress so you have the details saved.
-3.	Allow users to submit comments on a blog post, and post this data to WordPress
 
